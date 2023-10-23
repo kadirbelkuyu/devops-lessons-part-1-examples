@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  python-app:
+    build:
+      context: ./python/
+      dockerfile: Dockerfile
+    container_name: batuhan
+    ports:
+      - "5000:81"
+    depends_on:
+      - psql
+      - mongo
+  node-app:
+    container_name: node-app
+    build:
+      context: ./nodejs/
+      dockerfile: Dockerfile
+    ports:
+      - "82:3000"
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - python-app
+      - node-app

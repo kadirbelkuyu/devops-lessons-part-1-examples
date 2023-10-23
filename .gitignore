@@ -1,0 +1,9 @@
+node_modules/
+db/
+data/
+mysql/data/
+postgres-data
+.DS_Store
+.env
+.DS_Store
+node_modules

@@ -1,0 +1,3 @@
+[submodule "ecommerce-api"]
+	path = ecommerce-api
+	url = git@github.com:github/gitignore.git
